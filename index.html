@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment">
+  <meta name="keywords" content="Large Language Models, Elastic Models, Efficient ML, NLP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment</title>
+    <!-- Bootstrap -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTM57E6J0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GTM57E6J0Y');
+  </script>
+
+    <link href="static/css/bootstrap-4.4.1.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index_mg.css">
+
+  <link rel="icon" href="./static/images/FlexRank_logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script_mg.js"></script>
+
+  <!-- This is to render Math In TeX language -->
+  <script type="text/javascript" src="./static/js/LaTeXMathML.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop" style = 'max-width:1080px'>
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/FlexRank_logo.png" alt="Paper Logo" class="paper-logo">
+          <div class="title-container">
+          <h1 class="title is-1 publication-title">FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment</h1>
+          </div>
+          <div class="is-size-5 publication-authors">
+          <h2 class="subtitle is-3">ICML 2026 (Spotlight)</h2>
+        <span class="author-block">
+          <a href="https://scholar.google.it/citations?user=7gyywFsAAAAJ&hl=en">Riccardo Zaccone</a><sup>1,2</sup>,</span>
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=wKJeOQoAAAAJ&hl=en">Stefanos Laskaridis</a><sup>3</sup>,</span>
+        <span class="author-block">
+          <a href="https://scholar.google.com/citations?user=cM3Iz_4AAAAJ&hl=en">Marco Ciccone</a><sup>4</sup>,
+        </span>
+        <span class="author-block">
+          <a href="https://scholar.google.it/citations?user=hOQjblcAAAAJ&hl=en">Samuel Horvath</a><sup>2</sup>,
+        </span>
+      </div>
+
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Politecnico di Torino,</span>
+            <span class="author-block"><sup>2</sup>MBZUAI - Mohamed bin Zayed University of Artificial Intelligence</span>
+            <span class="author-block"><sup>3</sup>Amazon Science</span>
+             <span class="author-block"><sup>4</sup>Vector Institute</span>
+          </div>
+    <div class="is-size-5 publication-authors">
+    <span class="author-block">
+    <small><tt>riccardo.zaccone@polito.it</tt></small>
+
+    </span>
+    </div>
+          <div class="column has-text-centered">
+                <span class="link-block">
+                    <a href="https://openreview.net/forum?id=DK0kvnNelx" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                    </a>
+                </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2602.02680"  target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+            <!-- <span class="link-block">
+                <a  href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                </a>
+            </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/RickZack/FlexRank"  target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+    <div class="hero-body" style="padding-inline: 4vh">
+      <video id="teaser" autoplay muted loop playsinline style="width: 100%; height: auto;">
+        <source src="./static/videos/video_four.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </h2>
+    </div>
+</section> -->
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">About this work</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modern LLMs and Vision Transformers are usually deployed as fixed computational monoliths: <b>one model, one cost, one accuracy point</b>.
+            FlexRank changes this by turning a pretrained model into a family of nested low-rank submodels that share the same weights.
+          </p>
+          <p>
+            🚀 <b>Train once, deploy everywhere:</b> choose the rank budget at inference time.<br>
+            🧩 <b>One shared model, many sizes:</b> smaller submodels are nested inside larger ones.<br>
+            🎯 <b>Budget-aware rank allocation:</b> FlexRank spends parameters where they matter most.<br>
+            ⚡ <b>Real inference savings:</b> Gauge-Aligned Reparametrization makes low-rank deployment practical.
+          </p>
+        </div>
+        <figure class="paper-figure">
+          <img src="./static/images/flexrank_overview.png" alt="Overview of the FlexRank pipeline">
+          <figcaption>
+            <b>Figure 1.</b> FlexRank starts from a base model, decomposes each linear layer, extracts nested submodels through a global rank ordering, and refines them by distillation from the original model.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            FlexRank is built around a simple deployment question: <b>if we can only afford part of the model, which part should we keep?</b>
+            A uniform rank cut is too crude, because different layers and modules contribute differently to the final prediction.
+            FlexRank instead learns an ordered decomposition of the pretrained model and uses it to build a budget-aware hierarchy.
+          </p>
+          <p>
+            🧱 <b>Step 1 - Decompose:</b> each linear layer is factorized into low-rank components ordered by importance.<br>
+            🧭 <b>Step 2 - Search:</b> dynamic programming decides how many components to keep in each layer for each budget.<br>
+            🔁 <b>Step 3 - Consolidate:</b> sampled submodels are distilled from the original model so all budgets work well together.
+          </p>
+          <p>
+            The result is not a collection of separately trained compressed models. It is <b>one elastic model</b> whose smaller configurations are
+            nested inside the larger ones, making the accuracy-cost curve smooth and easy to deploy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why Nestedness Matters</h2>
+        <div class="content has-text-justified">
+          <p>
+            The main idea is simple: <b>elastic models should not be a bag of unrelated submodels</b>.
+            They should form a clean hierarchy where larger models refine the components reused by smaller ones.
+          </p>
+          <p>
+            ❌ <b>Post-training selection:</b> good full model, weak smaller models.<br>
+            ❌ <b>All-submodel training:</b> too much interference between rank choices.<br>
+            ✅ <b>Nested submodel training:</b> compatible budgets, shared knowledge, Pareto-efficient behavior.
+          </p>
+        </div>
+        <figure class="paper-figure">
+          <img src="./static/images/flexrank_nestedness.png" alt="Comparison of post-training selection, all-submodel learning, and nested submodel learning">
+          <figcaption>
+            <b>Figures 2-3.</b> Nested submodel learning is the only strategy that recovers the Pareto-efficient hierarchy in the synthetic setting, and FlexRank recovers the same principle in deep networks.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Main Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            FlexRank delivers smooth accuracy-cost trade-offs across <b>LLMs</b> and <b>Vision Transformers</b>.
+            It consistently improves over SVD, DataSVD, and ACIP-style low-rank elastic baselines.
+          </p>
+          <p>
+            🦙 <b>Llama models:</b> graceful degradation over many parameter budgets.<br>
+            🖼️ <b>DINOv3 ViTs:</b> strong ImageNet1K accuracy even after large parameter reductions.<br>
+            🏁 <b>Beyond low-rank baselines:</b> competitive with structured pruning and depth-elastic methods.
+          </p>
+        </div>
+        <figure class="paper-figure">
+          <img src="./static/images/flexrank_main_results.png" alt="FlexRank main accuracy-cost results on Llama and DINOv3 models">
+          <figcaption>
+            <b>Figures 4-5.</b> FlexRank gives the smoothest degradation across parameter budgets on Llama and DINOv3 models, and remains competitive with pruning and depth-elastic baselines.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablations</h2>
+        <div class="content has-text-justified">
+          <p>
+            The ablations show that FlexRank is more than SVD plus training: both the <b>rank allocation</b> and the <b>nested training procedure</b>
+            are doing important work.
+          </p>
+          <p>
+            🔍 <b>Rank profiles are non-uniform.</b> In the heatmaps below, each column corresponds to a GPT-2 module and each row to a target model size.
+            If uniform compression were enough, the heatmaps would look almost flat. Instead, FlexRank preserves more capacity in specific modules,
+            showing that the dynamic-programming search identifies where rank is most valuable.
+          </p>
+          <p>
+            📈 <b>Initialization alone does not solve elasticity.</b> In Figure 7(a), the DataSVD curves with 256 and 1024 calibration samples almost overlap,
+            showing that a small calibration set is already enough to estimate the layer-wise decomposition. However, the loss remains far from the
+            original model at smaller parameter counts, so better initialization alone is not enough.
+          </p>
+          <p>
+            🧠 <b>Joint nested training is the key consolidation step.</b> Figure 7(b) shows that independently adapting each layer is still much weaker
+            than training the selected submodels end-to-end: the model needs to repair cross-layer interactions, not only local reconstruction errors.
+            Figure 8 then isolates the role of budget sampling: each single-budget model is strong near the budget it was trained for, but fails to
+            trace the full Pareto curve. FlexRank stays close to the best curve because it distills many nested budgets into the same shared weights.
+          </p>
+        </div>
+        <figure class="paper-figure">
+          <img src="./static/images/flexrank_ablation_profiles.png" alt="FlexRank rank allocation heatmaps across model components">
+          <figcaption>
+            <b>Figure 6.</b> The learned GPT-2 profiles are not uniform: FlexRank keeps more rank in the components that matter most for each target size.
+          </figcaption>
+        </figure>
+        <figure class="paper-figure">
+          <img src="./static/images/svd_init.png" alt="FlexRank ablations on DataSVD initialization and nested submodel training">
+          <img src="./static/images/flexrank_ablation_training.png" alt="FlexRank ablations on DataSVD initialization and nested submodel training">
+          <figcaption>
+            <b>Figures 7-8.</b> Figure 7(a) shows that DataSVD converges with few calibration samples; Figure 7(b) shows that end-to-end submodel training is needed beyond layer-wise adaptation; Figure 8 shows that sampling nested budgets is necessary to cover the full Pareto frontier.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusions</h2>
+        <div class="content has-text-justified">
+          <p>
+            FlexRank makes low-rank compression <b>elastic</b>: a single pretrained model becomes a family of deployable submodels,
+            each selected by budget and backed by shared nested weights.
+          </p>
+          <p>
+            ✨ <b>One model.</b> Many budgets.<br>
+            ⚡ <b>Less compute.</b> Smooth degradation.<br>
+            🌍 <b>Adaptive deployment</b> across heterogeneous hardware, latency, and memory constraints.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">How to cite us</h2>
+    <pre><code>
+      @inproceedings{
+      zaccone2026flexrank,
+      title={FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment},
+      author={Zaccone, Riccardo and Laskaridis, Stefanos and Ciccone, Marco and Horvath, Samuel},
+      booktitle={Forty-third International Conference on Machine Learning},
+      year={2026},
+      url={https://openreview.net/forum?id=DK0kvnNelx}
+      }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License </a>.
+    </p>
+  </div>
+</section>
+</footer>
+
+</body>
+</html>
