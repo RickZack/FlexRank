@@ -1,0 +1,7 @@
+[run]
+source =
+    flexrank/src/flexrank
+
+[report]
+omit =
+    */tests/*

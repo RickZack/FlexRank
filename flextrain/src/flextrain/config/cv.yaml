@@ -1,0 +1,28 @@
+defaults:
+  - base_config
+  - train: distillation
+  - eval: eval
+  - model: vit_base_16
+  - dataset: cifar100
+  - decomposition: datasvd
+  - profile_algo@profile_algo: uniform
+  - profile_algo@last_profile_algo: nosearch
+  - sampler: predefined_models
+  - logger: wandb
+  - _self_
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+task: VISION
+train:
+  dataloader_num_workers: 8
+  dataloader_persistent_workers: True
+
+eval:
+  dataloader_num_workers: 8
+  dataloader_persistent_workers: True
+
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

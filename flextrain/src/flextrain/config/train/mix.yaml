@@ -1,0 +1,6 @@
+defaults:
+ - default
+
+ce_loss_w: ???
+kl_loss_w: ???
+temperature: 1.0

@@ -1,0 +1,13 @@
+defaults:
+ - vision_dataset
+
+path: "uoft-cs/cifar100"
+name: None
+resize_size: 256
+crop_size: 224
+num_labels: 100
+image_col: "img"
+label_col: "fine_label"
+eval_ds_size: 8975
+calib_ds_size: 1024
+streaming: False

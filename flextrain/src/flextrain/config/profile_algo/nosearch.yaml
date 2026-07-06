@@ -1,0 +1,4 @@
+defaults:
+ - base_search_algo
+
+classname: '' # falsy value treated as "no profile search"

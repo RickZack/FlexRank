@@ -1,0 +1,7 @@
+defaults:
+ - base_sampler
+
+classname: PredefinedModelsSampler
+sampler_kwargs:
+  sandwich: True
+  sample_only_largest: True

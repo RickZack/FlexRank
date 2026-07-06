@@ -1,0 +1,16 @@
+target-version = "py311"
+line-length = 100
+
+extend-exclude = [
+  "data",
+  "notebooks",
+  "notebooks/data",
+  "notebooks/notebook_data",
+  "notebooks/outputs",
+]
+
+[lint]
+select = [
+  "E9",
+  "F",
+]

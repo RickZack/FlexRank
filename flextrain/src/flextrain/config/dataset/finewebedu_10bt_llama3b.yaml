@@ -1,0 +1,6 @@
+defaults:
+ - default_nlp
+
+path: "HuggingFaceFW/fineweb-edu"
+name: "sample-10BT"
+streaming: False

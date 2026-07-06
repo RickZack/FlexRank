@@ -1,0 +1,20 @@
+compute_environment: LOCAL_MACHINE
+debug: false
+distributed_type: MULTI_GPU
+downcast_bf16: 'no'
+enable_cpu_affinity: false
+gpu_ids: all
+# MAKE THE SCRIPT DISCOVER AUTOMATICALLY DISTR. PARAMS
+machine_rank: null
+main_process_ip: null
+main_process_port: null
+num_machines: null
+num_processes: null
+main_training_function: main
+mixed_precision: bf16
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false

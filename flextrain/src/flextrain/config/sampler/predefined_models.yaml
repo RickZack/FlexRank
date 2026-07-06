@@ -1,0 +1,6 @@
+defaults:
+ - base_sampler
+
+classname: PredefinedModelsSampler
+sampler_kwargs:
+  sandwich: False

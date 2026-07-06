@@ -1,0 +1,4 @@
+defaults:
+ - default
+
+svd_type: SVD

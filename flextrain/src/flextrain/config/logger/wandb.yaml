@@ -1,0 +1,6 @@
+defaults:
+ - base_logger
+
+name: test
+project: FlexRank
+entity: everfjord

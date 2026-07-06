@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use FlexRank, please cite the paper below."
+title: "FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment"
+authors:
+  - family-names: "Zaccone"
+    given-names: "Riccardo"
+  - family-names: "Laskaridis"
+    given-names: "Stefanos"
+  - family-names: "Ciccone"
+    given-names: "Marco"
+  - family-names: "Horvath"
+    given-names: "Samuel"
+year: 2026
+conference:
+  name: "Forty-third International Conference on Machine Learning"
+url: "https://rickzack.github.io/FlexRank/"
+abstract: "FlexRank creates nested low-rank submodels that share weights and can be deployed at different parameter budgets."
+preferred-citation:
+  type: conference-paper
+  title: "FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment"
+  authors:
+    - family-names: "Zaccone"
+      given-names: "Riccardo"
+    - family-names: "Laskaridis"
+      given-names: "Stefanos"
+    - family-names: "Ciccone"
+      given-names: "Marco"
+    - family-names: "Horvath"
+      given-names: "Samuel"
+  year: 2026
+  conference:
+    name: "Forty-third International Conference on Machine Learning"
+  url: "https://openreview.net/forum?id=DK0kvnNelx"

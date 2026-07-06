@@ -1,0 +1,16 @@
+defaults:
+ - base_eval
+
+output_dir: "${train.output_dir}/eval"
+disable_tqdm: True 
+log_level: 'error'
+logging_strategy: 'no'
+save_strategy: 'no'
+per_device_train_batch_size: 16
+per_device_eval_batch_size: 16
+eval_steps: 1000
+learning_rate: 0
+warmup_steps: 0
+weight_decay: 0
+max_steps: 1
+bf16: True

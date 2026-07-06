@@ -1,0 +1,8 @@
+defaults:
+ - base_sampler
+
+classname: AllLayerLinearSampler
+sampler_kwargs:
+  sandwich: False
+  min_p: ${decomposition.min_p}
+  num_models: ${decomposition.n_models}

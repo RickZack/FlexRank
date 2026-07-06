@@ -1,0 +1,7 @@
+defaults:
+ - default_nlp
+ - _self_
+
+
+path: "HuggingFaceFW/fineweb-edu"
+name: "sample-10BT"

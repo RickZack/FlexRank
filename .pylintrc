@@ -1,0 +1,10 @@
+[MASTER]
+ignore-paths =
+    ^notebooks(/|$),
+    ^.*(/)?tests(/|$),
+    ^data(/|$)
+persistent = no
+
+[MESSAGES CONTROL]
+disable =
+    R

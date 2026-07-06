@@ -1,0 +1,17 @@
+defaults:
+  - base_config
+  - train: finetune
+  - model: vit_base_16
+  - dataset: cifar100
+  - logger: wandb
+  - _self_
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+task: VISION
+
+hydra:
+  job:
+    name: finetune
+  run:
+    dir: ${train.output_dir}

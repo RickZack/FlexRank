@@ -1,0 +1,7 @@
+defaults:
+ - base_sampler
+
+classname: SingleLayerLinearSampler
+sampler_kwargs:
+  min_p: ${decomposition.min_p}
+  num_models: ${decomposition.n_models}

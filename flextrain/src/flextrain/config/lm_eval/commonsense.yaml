@@ -1,0 +1,14 @@
+enabled: false
+task_names:
+  - openbookqa
+  - arc_easy
+  - arc_challenge
+  - winogrande
+  - hellaswag
+  - piqa
+batch_size: ${eval.per_device_eval_batch_size}
+num_fewshot: 0
+bootstrap_iters: 0
+cache_requests: true
+log_samples: false
+limit: null

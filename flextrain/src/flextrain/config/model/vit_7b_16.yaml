@@ -1,0 +1,4 @@
+defaults:
+ - default_vision
+
+model_name_or_path: facebook/dinov3-vit7b16-pretrain-lvd1689m

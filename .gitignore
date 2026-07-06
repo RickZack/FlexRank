@@ -1,0 +1,57 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.hypothesis/
+.cache/
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Project-local generated worktrees and logs
+.slurm-test-work/
+slurm-*.out
+slurm_discovery/tests/integration/slurm/local_config.toml
+
+# Notebook and editor detritus
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# Local datasets and generated ML artifacts
+data/
+notebooks/data/
+notebooks/notebook_data/
+notebooks/outputs/
+outputs/
+wandb/
+mlruns/
+runs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.pkl
+*.safetensors
+*.tar.gz
+
+# Notebook release hygiene
+*.nbconvert.ipynb

@@ -1,0 +1,25 @@
+defaults:
+ - base_train
+
+per_device_train_batch_size: 8
+per_device_eval_batch_size: 16
+gradient_accumulation_steps: 32 # Total bs = train_bs x grad_acc x num_devices
+eval_strategy: "steps"
+eval_steps: 100
+learning_rate: 1e-5
+weight_decay: 0.1
+adam_beta2: 0.95
+max_grad_norm: 1.0
+lr_scheduler_type: "cosine_with_min_lr"
+warmup_steps: 715
+lr_scheduler_kwargs:
+  min_lr: 0
+log_level: 'warning'
+log_on_each_node: False
+logging_strategy: 'steps'
+logging_steps: 10
+seed: 1
+bf16: True
+report_to: "wandb"
+ddp_find_unused_parameters: False
+torch_compile: True

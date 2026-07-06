@@ -1,0 +1,7 @@
+defaults:
+ - base_decomposition
+
+min_p: 0.1
+n_models: 10
+freeze_non_decomposed: False
+exclude_layers_names: ['lm_head']

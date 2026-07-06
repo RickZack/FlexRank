@@ -1,0 +1,7 @@
+defaults:
+ - nlp_dataset
+
+sequence_length: 1024
+eval_ds_size: 4096
+calib_ds_size: 256
+streaming: True

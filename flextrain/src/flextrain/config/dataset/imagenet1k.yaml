@@ -1,0 +1,13 @@
+defaults:
+ - vision_dataset
+
+path: "ILSVRC/imagenet-1k"
+name: None
+resize_size: 256
+crop_size: 224
+num_labels: 1000
+image_col: "image"
+label_col: "label"
+eval_ds_size: 45904
+calib_ds_size: 4096
+streaming: False

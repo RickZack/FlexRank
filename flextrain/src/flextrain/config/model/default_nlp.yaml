@@ -1,0 +1,8 @@
+defaults:
+ - nlp_model
+
+trust_remote_code: True
+use_auth_token: True 
+load_pretrained_model: True
+cache_dir: null
+_torch_dtype: torch.float32

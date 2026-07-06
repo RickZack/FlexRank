@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flexrank"
+version = "0.0.1"
+description = "Trainable rank-based decomposition of DNNs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Riccardo Zaccone" },
+  { name = "Stefanos Laskaridis" },
+  { name = "Marco Ciccone" },
+  { name = "Samuel Horvath" },
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+  "numpy",
+  "torch",
+  "tqdm",
+  "typing-extensions",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-cov",
+  "pylint",
+  "ruff",
+  "build",
+  "twine",
+  "detect-secrets",
+  "wheel",
+]
+
+[project.urls]
+Homepage = "https://rickzack.github.io/FlexRank/"
+Paper = "https://openreview.net/forum?id=DK0kvnNelx"
+arXiv = "https://arxiv.org/abs/2602.02680"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,2 @@
+-e ./flexrank[dev]
+-e ./flextrain[dev]

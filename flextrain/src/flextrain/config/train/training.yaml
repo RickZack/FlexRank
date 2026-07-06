@@ -1,0 +1,5 @@
+defaults:
+ - default
+
+ce_loss_w: 1.0
+kl_loss_w: 0.0

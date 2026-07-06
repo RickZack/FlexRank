@@ -1,0 +1,22 @@
+defaults:
+  - base_config
+  - train: distillation
+  - eval: eval
+  - model: gpt2
+  - dataset: finewebedu_10bt
+  - decomposition: datasvd
+  - profile_algo@profile_algo: dp
+  - profile_algo@last_profile_algo: nosearch
+  - sampler: predefined_models
+  - lm_eval: commonsense
+  - logger: wandb
+  - _self_
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+task: NLP
+
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

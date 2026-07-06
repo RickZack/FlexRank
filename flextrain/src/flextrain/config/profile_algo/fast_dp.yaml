@@ -1,0 +1,9 @@
+defaults:
+ - base_search_algo
+
+classname: DPSearchAlgo
+algo_kwargs:
+  min_p: ${decomposition.min_p}
+  n_models: ${decomposition.n_models}
+  fast_probe_points: 1
+eager_pruning: False
